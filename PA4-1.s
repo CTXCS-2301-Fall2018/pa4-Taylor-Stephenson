@@ -1,6 +1,6 @@
 
-	@	Put the required header information here
-
+	@ Taylor Stephenson: PA4-1: 10-22-2018: adds all values between two values
+	
 	.extern printf
 	.extern scanf
 	.global main
@@ -16,7 +16,12 @@ main:
 	@ Your code must put the final answer
 	@ in R1.
 	@-------------
-
+	MOV	R1, #0		@ puts 0 in R1
+_loop:
+	CMP	R2, R3		@ If R2<=R3
+	ADDLE	R1, R1, R2	@ Add R2 to R1 and then
+	ADDLE	R2, R2, #1	@ Add 1 to R2
+	BLE	_loop		@ reiterate loop
 	
 	
 	@-------------
