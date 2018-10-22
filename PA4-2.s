@@ -1,5 +1,5 @@
 	@ Factorial
-	@ Put the required header information here
+	@ Taylor Stephenson: PA4-2: 10-22-2018: does some factorials
 
 	.extern printf
 	.extern scanf
@@ -16,7 +16,15 @@ main:	PUSH	{LR}
 	@-------------
 	@ Your code goes here.  Put n! in R2
 	@-------------
+	MOV	R2, #1		@ initialize R2
+	CMP	R0, #0		@ checks if n is 0
+	MOVEQ	R2, #1		@ factorial is 1
 
+lorp:
+	CMP	R0, #1		@ checks if n is greater than
+	MULGE	R2, R0, R2	@ or equal to 1. if so, mul R0 by R2 into R2
+	SUBGE	R0, R0, #1	@ subtracts 1 from R0
+	BGE	lorp		@ lorp
 
 
 
